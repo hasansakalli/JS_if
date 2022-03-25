@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Begrüßungsbot</title>
+  </head>
+  <style>
+
+      *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .container{
+        align-items: center;
+    }
+    h4 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    #image {
+      position: absolute;
+      background-position: center;
+      background-size: cover;
+      width: 30%;
+      height: 35%;
+      top: 20%;
+      right: 20%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+     
+      background-repeat: no-repeat;
+    }
+
+    #title {
+      color: rgb(80, 8, 148);
+    }
+    input,
+    button {
+      padding: 8px;
+      border: 1px solid skyblue;
+      color: rgb(80, 8, 148);
+    }
+    button:hover {
+      background-color: rgb(5, 43, 58);
+      cursor: pointer;
+      color: aliceblue;
+    }
+    input {
+      width: 9rem;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="image" id="image"></div>
+
+      <h4 id="title">Begrüßungsbot</h4>
+      <input type="text" id="wort" placeholder="schreibe ein Wort.." />
+      <button id="btn">Hol deine Begrüßung</button>
+    </div>
+
+    <script>
+      document.getElementById("btn").onclick = function () {
+        var hallo = "Hallo";
+        var bye = "Bye";
+
+
+        if (document.getElementById("wort").value == hallo) {
+          message = "Das ist eine Begrüßung";
+          document.getElementById("title").innerHTML = message;
+
+             //-----------------css-----------------
+
+          var veda = document.getElementById("image");
+          veda.style.backgroundImage =
+            "url('https://acegif.com/wp-content/uploads/hallo-gif-animierte-11.gif')";
+
+         
+
+        } else if (document.getElementById("wort").value == bye) {
+          message = "Das ist eine Verabschiedung.";
+          document.getElementById("title").innerHTML = message;
+          
+            //-----------------css-----------------
+          var veda = document.getElementById("image");
+          veda.style.backgroundImage =
+            "url('https://acegif.com/wp-content/uploads/animierte-gif-auf-wiedersehen-12.gif')";
+
+        
+        } else {
+          message = "Bitte geben Sie ein gültiges Wort ein";
+          document.getElementById("title").innerHTML = message;
+
+          //-----------------css-----------------
+          var veda = document.getElementById("image");
+          veda.style.backgroundImage =
+            "url('https://c.tenor.com/zSwssFAcaXYAAAAC/arnold-wrong.gif')";
+        }
+      };
+    </script>
+  </body>
+</html>
